@@ -1,0 +1,38 @@
+<br>
+<br>
+<br>
+<div class="container text-center">
+  <div class="plansearch">
+  <h1>SEARCH FOR PLANS</h1>
+  <div class="form-inline">
+    <div class="input-group">
+      <input [(ngModel)]="query" class="form-control" size="75" placeholder="What are you looking for?">
+      <div class="input-group-btn">
+          <button (click)="findPlans()" type="button" class="btn btn-danger">SEARCH</button>
+      </div>
+    </div>
+    <fieldset>
+      <div class="plan-filter">SORT BY:
+        <input type="radio" class="radio" name="a" value="name" id="a1"/>
+          <label for="name">Name</label>
+        <input type="radio" class="radio" name="a" value="date" id="a2"/>
+          <label for="date">Earliest Date</label>
+        <input type="radio" class="radio" name="a" value="dateLatest" id="a3"/>
+          <label for="dateLatest">Latest Date</label>
+      </div>
+    </fieldset>
+  </div>
+</div>
+</div>
+<br>
+<table class="container text-center">
+  <tr *ngFor="let plan of plans | planfilter:'name,listDate':query; let id = index">
+    <td> 
+      <img src="{{plan.img01}}">
+    </td>
+    <td><a [routerLink]="['/plan-page', id+1000]">{{plan.name}}</a></td>
+    <td>{{plan.description}}</td>
+    <td>{{plan.listDate}}</td>
+    <td>{{plan.ownerId}}</td>
+  </tr>
+</table>

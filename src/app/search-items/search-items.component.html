@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<div class="container text-center">
+  <div class="itemsearch">
+  <h1>SEARCH FOR ITEMS</h1>
+  <div class="form-inline">
+    <div class="input-group">
+      <input [(ngModel)]="query" class="form-control" size="75" placeholder="What are you looking for?">
+      <div class="input-group-btn">
+          <button (click)="findItems()" type="button" class="btn btn-danger">SEARCH</button>
+      </div>
+    </div>
+    <fieldset>
+      <div class="search-filter">SORT BY:
+        <input type="radio" class="radio" name="a" value="name" id="a1"/>
+          <label for="name">Name</label>
+        <input type="radio" class="radio" name="a" value="date" id="a2"/>
+          <label for="date">Earliest Date</label>
+        <input type="radio" class="radio" name="a" value="dateLatest" id="a3"/>
+          <label for="dateLatest">Latest Date</label>
+        <input type="radio" class="radio" name="a" value="lowestPrice" id="a4"/>
+          <label for="lowestPrice">Lowest Price</label>
+        <input type="radio" class="radio" name="a" value="highestPrice" id="a5"/>
+          <label for="highestPrice">Highest Price</label>
+      </div>
+    </fieldset>
+  </div>
+  </div>
+</div>
+<br>
+<table class="container text-center">
+  <tr *ngFor="let item of data | filter:'name,price,listDate':query; let id=index">
+    <td>
+      <img src="{{item.img01}}">
+    </td>
+    <td><a [routerLink]="['/item-page', id+1000]">{{item.name}}</a></td>
+    <td>{{item.price}}</td>
+    <td>{{item.description}}</td>
+    <td>{{item.listDate}}</td>
+    <td>{{item.ownerId}}</td>
+  </tr>
+</table>
