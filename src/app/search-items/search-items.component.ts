@@ -16,20 +16,17 @@ export class SearchItemsComponent{
   
   constructor(private httpClient:HttpClient, private itemService:ItemService) { }
 
-  // findItems(){
-  //   this.itemService.findItems(
-  //   //  search, sortBy, rangeFrom, rangeTo
-  //   ).subscribe(data => {
-  //     this.items = data;
-  //     console.log(Item);
-  //   })
-  // }
+  findItems() {
+    this.itemService.findItems().subscribe(data => {
+        this.data = data;
+    })
+  }
 
   saveItem(item:Item){
     this.itemService.saveItem(this.item).subscribe(data => data);
   }
 
-  findItems() {
+  ngOnInit() {
     this.itemService.findItems().subscribe(data => {
         this.data = data;
   })

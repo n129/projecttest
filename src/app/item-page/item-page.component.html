@@ -4,13 +4,13 @@
       <div class="col-lg-2">
         <br>
         <br>
-        <h1 class="my-4">{{userService.user.userName}}'s Store</h1>
+        <h1 class="my-4">{{item.ownerUsername}}'s Store</h1>
       </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-2">
           <div class="card mt-4">
             <br><br>
-            <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+            <img class="card-img-top img-fluid" src="{{item.img01}}" alt="">
           </div>
             <div class="card-body" *ngIf="item">
               <h3 class="card-title">{{item.name}}</h3>

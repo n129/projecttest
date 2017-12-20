@@ -21,9 +21,12 @@ export class ItemPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id'] - 1000; // (+) converts string 'id' to a number
-      this.item = this.itemService.items[this.id];
-       // In a real app: dispatch action to load the details here.
+      this.id = + params['id'] - 1000; // (+) converts string 'id' to a number
+      this.itemService.items.forEach( e=> {
+        if (e.id == this.id){
+          this.item = e;
+        }
+      })
     });
   }
 

@@ -13,7 +13,6 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink='/login' *ngIf="userService.user==null"><span class="glyphicon glyphicon-log-in"></span>SIGNUP/LOGIN</a></li>
-          <!-- <li><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink='/home' *ngIf="userService.user"><span class="glyphicon glyphicon-home"></span>HOME</a></li> -->
           <li><a routerLink='/home' *ngIf="userService.user"><span class="glyphicon glyphicon-home"></span>HOME</a></li>
           <li><a routerLink='/search-plans' *ngIf="userService.user"><span class="glyphicon glyphicon-file"></span>PLANS</a></li>
           <li><a routerLink='/search-tool' *ngIf="userService.user"><span class="	glyphicon glyphicon-wrench"></span>TOOLS</a></li>

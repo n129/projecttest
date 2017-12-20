@@ -27,7 +27,9 @@ import { PlanPageComponent } from './plan-page/plan-page.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { SearchToolsComponent } from './search-tools/search-tools.component';
 import { ToolPageComponent } from './tool-page/tool-page.component';
-import { UploadItemComponent } from './upload-item/upload-item.component'
+import { UploadItemComponent } from './upload-item/upload-item.component';
+import { UploadPlanComponent } from './upload-plan/upload-plan.component';
+import { ImageUploadModule } from "angular2-image-upload";
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { UploadItemComponent } from './upload-item/upload-item.component'
     CheckoutComponent,
     SearchToolsComponent,
     ToolPageComponent,
-    UploadItemComponent
+    UploadItemComponent,
+    UploadPlanComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { UploadItemComponent } from './upload-item/upload-item.component'
     //ADD THESE
     HttpModule,
     HttpClientModule,
+    ImageUploadModule.forRoot(),
     RouterModule.forRoot([
       {path: '' , redirectTo:'default', pathMatch:'full'},
       {path: 'login' , component : LoginComponent},
@@ -72,7 +76,8 @@ import { UploadItemComponent } from './upload-item/upload-item.component'
       {path: 'checkout' , component : CheckoutComponent},
       {path: 'search-tools' , component : SearchToolsComponent},
       {path: 'tool-page' , component : ToolPageComponent},
-      {path: 'upload-item' , component : UploadItemComponent}
+      {path: 'upload-item' , component : UploadItemComponent},
+      {path: 'upload-plan' , component : UploadPlanComponent}
     ])
   ],
   providers: [UserService, ItemService, PlanService, CartService],

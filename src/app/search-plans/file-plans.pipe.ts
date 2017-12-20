@@ -11,4 +11,5 @@ export class PlanFilterPipe implements PipeTransform {
       keys.split(',').some(key => 
         plan.hasOwnProperty(key) && new RegExp(term, 'gi').test(plan[key])));
   }
+
 }

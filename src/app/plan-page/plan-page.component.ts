@@ -21,7 +21,6 @@ export class PlanPageComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params['id'] - 1000; // (+) converts string 'id' to a number
       this.plan = this.planService.plans[this.id];
-       // In a real app: dispatch action to load the details here.
     });
   }
 

@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     //from Spring
-    this.userService.signup(this.user).subscribe(data => data);
+    this.userService.login(this.user).subscribe(data => data);
   }
 
   onFind(){

@@ -15,5 +15,5 @@ retypePassword:String;
 avatar:String;
 birthday:String;
 userType:String;
-regDate:Date;
+showAvatar:String;
 }

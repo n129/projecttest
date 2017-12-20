@@ -8,7 +8,7 @@
     <div class="input-group">
       <input [(ngModel)]="query" class="form-control" size="75" placeholder="What are you looking for?">
       <div class="input-group-btn">
-          <button (click)="findPlans()" type="button" class="btn btn-danger">SEARCH</button>
+          <!-- <button (click)="findPlans()" type="button" class="btn btn-danger">SEARCH</button> -->
       </div>
     </div>
     <fieldset>
@@ -25,14 +25,22 @@
 </div>
 </div>
 <br>
-<table class="container text-center">
-  <tr *ngFor="let plan of plans | planfilter:'name,listDate':query; let id = index">
-    <td> 
-      <img src="{{plan.img01}}">
+<table class="container">
+    <tr>
+        <th>IMAGE</th>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>CREATOR</th>
+      </tr>
+      <br>
+      <br>
+  <tr *ngFor="let plan of data | planfilter:'name,listDate':query; let id = index">
+    <td>
+      <img src="{{plan.img01}}" style="width:200px; height:200px">
     </td>
     <td><a [routerLink]="['/plan-page', id+1000]">{{plan.name}}</a></td>
     <td>{{plan.description}}</td>
-    <td>{{plan.listDate}}</td>
-    <td>{{plan.ownerId}}</td>
+    <!-- <td>{{plan.listDate}}</td> -->
+    <td>{{plan.ownerUsername}}</td>
   </tr>
 </table>

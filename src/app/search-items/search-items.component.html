@@ -8,7 +8,7 @@
     <div class="input-group">
       <input [(ngModel)]="query" class="form-control" size="75" placeholder="What are you looking for?">
       <div class="input-group-btn">
-          <button (click)="findItems()" type="button" class="btn btn-danger">SEARCH</button>
+          <!-- <button (click)="findItems()" type="button" class="btn btn-danger">SEARCH</button> -->
       </div>
     </div>
     <fieldset>
@@ -29,15 +29,24 @@
   </div>
 </div>
 <br>
-<table class="container text-center">
+<table class="container">
+  <tr>
+    <th>IMAGE</th>
+    <th>NAME</th>
+    <th>PRICE</th>
+    <th>DESCRIPTION</th>
+    <th>CREATOR</th>
+  </tr>
+  <br>
+  <br>
   <tr *ngFor="let item of data | filter:'name,price,listDate':query; let id=index">
     <td>
-      <img src="{{item.img01}}">
+      <img src="{{item.img01}}" style="width:200px; height:200px">
     </td>
-    <td><a [routerLink]="['/item-page', id+1000]">{{item.name}}</a></td>
-    <td>{{item.price}}</td>
+    <td><a [routerLink]="['/item-page', item.id+1000]">{{item.name}}</a></td>
+    <td>${{item.price}}.00</td>
     <td>{{item.description}}</td>
-    <td>{{item.listDate}}</td>
-    <td>{{item.ownerId}}</td>
+    <!-- <td>{{item.listDate}}</td> -->
+    <td>{{item.ownerUsername}}</td>
   </tr>
 </table>

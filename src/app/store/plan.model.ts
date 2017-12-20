@@ -2,27 +2,30 @@ export class Plan {
     id:Number;
     name:String;
     description:String;
-    ownerId:Number;
+    ownerUsername:String;
     listDate:DateTimeFormat;
-    img01:Blob;
+    img01:String;
     img01Descript:String;
-    img02:Blob;
+    img02:String;
     img02Descript:String;
-    img03:Blob;
+    img03:String;
     img03Descript:String;
+    //Image Loaded
+    showImg01:String;
+    showImg02:String;
+    showImg03:String;
 
-    constructor(id:Number, name:String, description:String, ownerId:Number, listDate:DateTimeFormat, 
-        img01:Blob, img01Descript:String, img02:Blob, img02Descript:String, img03:Blob, img03Descript:String){
-            this.id = id;
-            this.name = name;
-            this.description = description;
-            this.ownerId = ownerId;
-            this.listDate = listDate;
-            this.img01 = img01;
-            this.img01Descript = img01Descript;
-            this.img02 = img02;
-            this.img02Descript = img02Descript;
-            this.img03 = img03;
-            this.img03Descript = img03Descript;
+    constructor(){
+    // constructor(id:Number, name:String, description:String, ownerUsername:String, listDate:DateTimeFormat, 
+    //     img01:String, img01Descript:String, img02:String, img02Descript:String, img03:String, img03Descript:String){
+            this.name = "";
+            this.description = "";
+            this.ownerUsername = "";
+            this.img01 = "";
+            this.img01Descript = "";
+            this.img02 = "";
+            this.img02Descript = "";
+            this.img03 = "";
+            this.img03Descript = "";
     }
 }

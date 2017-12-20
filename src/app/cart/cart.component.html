@@ -13,7 +13,7 @@
               </div>
               <div class="col-xs-6">
                 <button type="button" class="btn btn-primary btn-sm btn-block">
-                  <span routerLink='/search-items' class="glyphicon glyphicon-share-alt"></span> Continue Shopping
+                  <span routerLink='/home' class="glyphicon glyphicon-share-alt"></span> Continue Shopping
                 </button>
               </div>
             </div>
@@ -21,7 +21,7 @@
         </div>
         <div class="panel-body" *ngFor= 'let cart of buildItems()' class="item">
           <div class="row">
-            <div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
+            <div class="col-xs-2"><img src="{{cart.item.img01}}" style="width:100px; height:100px">
             </div>
             <div class="col-xs-4">
               <h4 class="product-name">{{cart.item.name}}</h4><h4><small>{{cart.item.description}}</small></h4>
@@ -34,7 +34,7 @@
                 <input type="text" class="form-control input-sm" [value]="cart.quantity">
               </div>
               <div class="col-xs-1">
-                  <button (click)="removeFromCart(cart.item)" class="minus-btn" type="button" name="button">Remove
+                  <button (click)="removeFromCart(cart.item)" style="height:30px;" class="minus-btn" type="button" name="button">Remove
                     <img src="minus.svg" alt="" />
                   </button>
               </div>
